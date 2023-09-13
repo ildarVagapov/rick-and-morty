@@ -21,6 +21,11 @@ export const Header = () => {
 								New Page
 							</NavLink>
 						</li>
+						<li className='hover:text-lime-500  transition-colors'>
+							<NavLink to='/'>
+								New Page
+							</NavLink>
+						</li>
 					</ul>
 				</nav>
 			</header >
