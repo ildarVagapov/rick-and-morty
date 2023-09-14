@@ -11,29 +11,32 @@ interface CharacterCardProps {
 export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 
 	return (
-		<div className={s.container} >
-			{data?.results.map(char => (
-				<div className={s.card} key={char.id}>
-					<div className={s.image_container}>
-						<img className="" src={char.image} />
+		<>
+			{
+				data?.results.slice(0, 8).map(char => (
+					<div className={s.card} key={char.id}>
+						<div className={s.image_container}>
+							<img className="" src={char.image} />
+						</div>
+						<div className={s.info} >
+							<div className={s.status}>
+								{char.status === 'Dead' && < span style={{ backgroundColor: 'rgb(214, 61, 46)' }} className={s.status__icon}></span>}
+								{char.status === 'Alive' && < span style={{ backgroundColor: '#a3e635' }} className={s.status__icon}></span>}
+								{char.status === 'unknown' && < span style={{ backgroundColor: '#fffefe' }} className={s.status__icon}></span>}
+								{char.status.toLowerCase()} - {char.gender.toLowerCase()}
+							</div>
+							<div className={s.name}>
+								<Link to='/'>
+									{char.name}
+								</Link>
+							</div>
+							<div className={s.data}>
+								Last known location:
+								<a href='#'>{char.location.name}</a>
+							</div>
+						</div>
 					</div>
-					<div className={s.info} >
-						<div className={s.status}>
-							{char.status} - {char.gender}
-						</div>
-						<div className={s.name}>
-							<Link to='/'>
-								{char.name}
-							</Link>
-						</div>
-						<div className={s.data}>
-							Last known location:
-							<a href='#'>{char.location.name}</a>
-						</div>
-					</div>
-				</div>
-			))
-			}
-		</div >
+				))}
+		</>
 	)
 }

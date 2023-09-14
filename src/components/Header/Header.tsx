@@ -10,7 +10,7 @@ export const Header = () => {
 					<Logo />
 				</Link >
 				<nav >
-					<ul className='text-gray-400  font-semibold text-sm[15px] flex justify-center  gap-3' >
+					<ul className='text-gray-400  font-semibold text-sm[16px] flex justify-center  gap-3' >
 						<li className='hover:text-lime-500  transition-colors'>
 							<NavLink to='/characters'>
 								Characters
