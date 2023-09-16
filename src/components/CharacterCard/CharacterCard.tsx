@@ -10,12 +10,12 @@ interface CharacterCardProps {
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 
-
+	// slice(0, 8).
 
 	return (
 		<>
 			{
-				data?.results.slice(0, 8).map(char => (
+				data?.results.map(char => (
 					<div className={s.card} key={char.id}>
 						<div className={s.image_container}>
 							<img src={char.image} />
