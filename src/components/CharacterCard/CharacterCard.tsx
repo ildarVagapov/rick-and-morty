@@ -10,13 +10,15 @@ interface CharacterCardProps {
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 
+
+
 	return (
 		<>
 			{
 				data?.results.slice(0, 8).map(char => (
 					<div className={s.card} key={char.id}>
 						<div className={s.image_container}>
-							<img className="" src={char.image} />
+							<img src={char.image} />
 						</div>
 						<div className={s.info} >
 							<div className={s.status}>
@@ -26,7 +28,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 								{char.status.toLowerCase()} - {char.gender.toLowerCase()}
 							</div>
 							<div className={s.name}>
-								<Link to='/'>
+								<Link to={`/fullcharacter/${char.id}`}>
 									{char.name}
 								</Link>
 							</div>
@@ -35,7 +37,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 								<a href='#'>{char.location.name}</a>
 							</div>
 						</div>
-					</div>
+					</div >
 				))}
 		</>
 	)

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Root } from '../../models/models'
+import { Characters, Root } from '../../models/models'
 
 
 export const rickAndMortyApi = createApi({
@@ -10,7 +10,10 @@ export const rickAndMortyApi = createApi({
 		getRickAndMorty: builder.query<Root, void>({
 			query: () => `character`,
 		}),
+		getFullCharacter: builder.query<Characters, string | undefined>({
+			query: (id) => `character/${id}`,
+		}),
 	}),
 })
 
-export const { useGetRickAndMortyQuery } = rickAndMortyApi
+export const { useGetRickAndMortyQuery, useGetFullCharacterQuery } = rickAndMortyApi
