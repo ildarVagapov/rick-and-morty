@@ -18,7 +18,10 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 				data?.results.map(char => (
 					<div className={s.card} key={char.id}>
 						<div className={s.image_container}>
-							<img src={char.image} alt={char.name} />
+							{char.image
+								? <img src={char.image} alt={char.name} />
+								: <img src='/public/Spinner.gif' />
+							}
 						</div>
 						<div className={s.info} >
 							<div className={s.status}>
