@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useGetRickAndMortyQuery } from "../redux/api/api"
 import { CharacterCard } from "../components/CharacterCard/CharacterCard";
-import { Skeleton } from "../components/Sceleton/Sceleton";
+import { Skeleton } from "../components/Skeleton/Skeleton";
 
 
 export const Home = () => {

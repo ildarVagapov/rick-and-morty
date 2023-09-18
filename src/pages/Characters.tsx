@@ -1,5 +1,5 @@
 import { CharacterCard } from "../components/CharacterCard/CharacterCard"
-import { Skeleton } from "../components/Sceleton/Sceleton";
+import { Skeleton } from "../components/Skeleton/Skeleton";
 import { useGetCharactersPageQuery } from "../redux/api/api";
 import { useEffect } from "react";
 
