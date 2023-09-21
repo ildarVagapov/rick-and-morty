@@ -1,28 +1,22 @@
 import { Link } from "react-router-dom";
-import { Characters } from "../../models/models"
+import { Root } from "../../models/models"
 import s from "./Character.module.scss";
 
 interface CharacterCardProps {
-	data?: {
-		results: Characters[];
-	},
+	data?: Root | null
 }
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 
-	// slice(0, 8).
-
+	console.log(data)
 	return (
 		<>
 			{
 				data?.results.map(char => (
 					<div className={s.card} key={char.id}>
 						<div className={s.image_container}>
-							{
-								// ? <img src='/public/Spinner.gif' />
-								// : <img src={char.image} alt={char.name} />
-								<img src={char.image} alt={char.name} />
-							}
+							<img src={char.image} alt={char.name} />
+							{/* <img src='/Spinner.gif' alt='Loading' />} */}
 						</div>
 						<div className={s.info} >
 							<div className={s.status}>
