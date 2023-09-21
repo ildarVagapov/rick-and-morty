@@ -40,12 +40,12 @@
 		font-weight: 100;
 		color: #858282;
 		font-size: 18px;
+		transition-duration: 0.2s;
 		margin-top: -7px;
 
 	}
 	:hover {
 		color: #ffffff;
-		transition: 0.3s;
 	}
 }
 
@@ -54,9 +54,12 @@
 	font-size: 19px;
 	font-family: "Lato", sans-serif;
 	margin-top: -5px;
+
 	:hover {
 		color: #a3e635;
-		transition: 0.3s;
+	}
+	a {
+		transition-duration: 0.2s;
 	}
 }
 .status {

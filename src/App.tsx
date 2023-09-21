@@ -8,7 +8,7 @@ import { FullCharacter } from './pages/FullCharacter'
 function App() {
 
 	return (
-		<div className='wrapper'>
+		<div className='wrapper transition-all'>
 			<Header />
 			<div className='main'>
 				<Routes>
