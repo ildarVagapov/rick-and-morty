@@ -10,16 +10,13 @@ export const rickAndMortyApi = createApi({
 		getRickAndMorty: builder.query<Root, void>({
 			query: () => `character`,
 		}),
-		getFullCharacter: builder.query<Characters, string | undefined>({
+		getFullCharacter: builder.query<Characters, string>({
 			query: (id: string) => `character/${id}`,
 		}),
-		getCharactersPage: builder.query<Root, number>({
-			query: (page: number) => `character?page=${page}`,
-		}),
-		getCharactersFilter: builder.query<Root, string>({
-			query: (name: string) => `character/?name=${name}`,
+		getCharactersFilter: builder.query<Root, { filter: string; page: number }>({
+			query: ({ filter, page }) => `character/?${filter}&page=${page}`,
 		}),
 	}),
 })
 
-export const { useGetRickAndMortyQuery, useGetFullCharacterQuery, useGetCharactersPageQuery, useGetCharactersFilterQuery } = rickAndMortyApi
+export const { useGetRickAndMortyQuery, useGetFullCharacterQuery, useGetCharactersFilterQuery } = rickAndMortyApi

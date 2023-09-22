@@ -8,7 +8,6 @@ interface CharacterCardProps {
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ data }) => {
 
-	console.log(data)
 	return (
 		<>
 			{
