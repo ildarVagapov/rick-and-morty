@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom"
 import { Logo } from "../Icons/Logo"
 
-
 export const Header = () => {
 	return (
 		<div>

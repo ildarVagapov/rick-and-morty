@@ -11,7 +11,7 @@ export const rickAndMortyApi = createApi({
 			query: () => `character`,
 		}),
 		getFullCharacter: builder.query<Characters, string>({
-			query: (id: string) => `character/${id}`,
+			query: (id) => `character/${id}`,
 		}),
 		getCharactersFilter: builder.query<Root, { filter: string; page: number }>({
 			query: ({ filter, page }) => `character/?${filter}&page=${page}`,

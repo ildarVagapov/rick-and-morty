@@ -6,7 +6,7 @@ import { FullCharacterCard } from "../components/FullCharacterCard/FullCharacter
 export const FullCharacterPage = () => {
 
 	const { id } = useParams()
-	const { data, isError, isLoading, isSuccess } = useGetFullCharacterQuery(id)
+	const { data, isError, isLoading, isSuccess } = useGetFullCharacterQuery(id ? id : '')
 
 	return (
 		<div>
