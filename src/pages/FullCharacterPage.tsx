@@ -3,7 +3,7 @@ import { useGetFullCharacterQuery } from "../redux/api/api"
 import { FullCharacterCard } from "../components/FullCharacterCard/FullCharacterCard"
 
 
-export const FullCharacter = () => {
+export const FullCharacterPage = () => {
 
 	const { id } = useParams()
 	const { data, isError, isLoading, isSuccess } = useGetFullCharacterQuery(id)

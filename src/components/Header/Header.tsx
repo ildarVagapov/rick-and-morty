@@ -10,7 +10,7 @@ export const Header = () => {
 					<Logo />
 				</Link >
 				<nav >
-					<ul className='text-gray-400  font-semibold text-sm[18px] flex justify-center  gap-5' >
+					<ul className='text-gray-400  font-semibold text-sm[18px] flex justify-center  gap-10' >
 						<li className='hover:text-lime-500  transition-colors'>
 							<NavLink to='/'>
 								Home
@@ -22,8 +22,13 @@ export const Header = () => {
 							</NavLink>
 						</li>
 						<li className='hover:text-lime-500  transition-colors'>
-							<NavLink to='/'>
-								New Page
+							<NavLink to='/location'>
+								Locations
+							</NavLink>
+						</li>
+						<li className='hover:text-lime-500  transition-colors'>
+							<NavLink to='/episode'>
+								Episodes
 							</NavLink>
 						</li>
 					</ul>

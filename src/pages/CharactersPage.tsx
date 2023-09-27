@@ -1,26 +1,27 @@
 import { CharacterCard } from "../components/CharacterCard/CharacterCard"
 import { Skeleton } from "../components/Skeleton/Skeleton";
 import { useGetCharactersFilterQuery } from "../redux/api/api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Pagination } from "../components/Pagination/Pagination";
 import { FilterCharacters } from "../components/FilterCharacters/FilterCharacteres";
 
 
-export const Characters = () => {
+export const CharactersPage = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [filterByName, setFilterByName] = useState('');
 	const [filterByGender, setFilterByGender] = useState('');
 	const [filterByStatus, setFilterByStatus] = useState('');
-	const { data, isLoading, isSuccess, isError } = useGetCharactersFilterQuery({ filter: `name=${filterByName}&gender=${filterByGender}&status=${filterByStatus}`, page: currentPage })
-	// const { data, isLoading, isSuccess, isError } = useGetCharactersFilterQuery(`name=${filterByName}&gender=${filterByGender}&status=${filterByStatus}`)
+
+	const params = {
+		filter: `name=${filterByName}&gender=${filterByGender}&status=${filterByStatus}`,
+		page: currentPage
+	}
+	const { data, isLoading, isSuccess, isError } = useGetCharactersFilterQuery(params)
 
 	const handlePageChange = ({ selected }: { selected: number }) => {
 		setCurrentPage(selected + 1);
 	};
 
-	useEffect(() => {
-
-	}, [filterByGender, filterByGender, filterByStatus])
 
 	return (
 		<>
