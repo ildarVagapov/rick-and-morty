@@ -34,3 +34,21 @@ export interface Location {
 	name: string
 	url: string
 }
+
+
+// location query
+
+export interface RootLocation {
+	info: Info
+	results: Location[]
+}
+
+export interface Location {
+	id: number
+	name: string
+	type: string
+	dimension: string
+	residents: string[]
+	url: string
+	created: string
+}

@@ -1,9 +1,9 @@
 import ReactPaginate from "react-paginate"
-import { Root } from "../../models/models"
+import { Root, RootLocation } from "../../models/models"
 import s from '../Pagination/Pagination.module.scss'
 
 interface PaginationProps {
-	data?: Root,
+	data?: Root | RootLocation,
 	handlePageChange: ({ selected }: { selected: number }) => void
 }
 
