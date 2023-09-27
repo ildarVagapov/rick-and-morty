@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Characters, Root, RootLocation, } from '../../models/models'
+import { Characters, Location, Root, RootLocation, } from '../../models/models'
 
 
 export const rickAndMortyApi = createApi({
@@ -19,7 +19,10 @@ export const rickAndMortyApi = createApi({
 		getLocation: builder.query<RootLocation, number>({
 			query: (page) => `location/?page=${page}`,
 		}),
+		getFullLocation: builder.query<Location, string>({
+			query: (id) => `location/${id}`,
+		}),
 	}),
 })
 
-export const { useGetRickAndMortyQuery, useGetFullCharacterQuery, useGetCharactersFilterQuery, useGetLocationQuery } = rickAndMortyApi
+export const { useGetRickAndMortyQuery, useGetFullCharacterQuery, useGetCharactersFilterQuery, useGetLocationQuery, useGetFullLocationQuery } = rickAndMortyApi

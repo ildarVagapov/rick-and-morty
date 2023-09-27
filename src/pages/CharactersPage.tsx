@@ -25,7 +25,7 @@ export const CharactersPage = () => {
 
 	return (
 		<>
-			<main >
+			<div >
 				<FilterCharacters
 					filterByName={filterByName}
 					filterByGender={filterByGender}
@@ -39,7 +39,7 @@ export const CharactersPage = () => {
 					{isSuccess && <CharacterCard data={data} />}
 					{isError && <div>Ошибка загрузки</div>}
 				</div>
-			</main>
+			</div>
 			<Pagination handlePageChange={handlePageChange} data={data} />
 		</>
 	)

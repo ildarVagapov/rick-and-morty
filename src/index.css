@@ -141,3 +141,7 @@ body {
 .active {
 	color: #84cc16;
 }
+
+.location-font {
+	font-family: "Lato", sans-serif;
+}
