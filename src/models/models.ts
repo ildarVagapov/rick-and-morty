@@ -18,7 +18,7 @@ export interface Characters {
 	type: string
 	gender: string
 	origin: Origin
-	location: Location
+	location: CharactersLocation
 	image: string
 	episode: string[]
 	url: string
@@ -30,7 +30,7 @@ export interface Origin {
 	url: string
 }
 
-export interface Location {
+export interface CharactersLocation {
 	name: string
 	url: string
 }
