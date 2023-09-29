@@ -10,6 +10,9 @@ export const rickAndMortyApi = createApi({
 		getRickAndMorty: builder.query<Root, void>({
 			query: () => `character`,
 		}),
+		getLocationCharacter: builder.query<Root, number>({
+			query: (page) => `character/?page=${page}`,
+		}),
 		getFullCharacter: builder.query<Characters, string>({
 			query: (id) => `character/${id}`,
 		}),
@@ -25,4 +28,4 @@ export const rickAndMortyApi = createApi({
 	}),
 })
 
-export const { useGetRickAndMortyQuery, useGetFullCharacterQuery, useGetCharactersFilterQuery, useGetLocationQuery, useGetFullLocationQuery } = rickAndMortyApi
+export const { useGetRickAndMortyQuery, useGetFullCharacterQuery, useGetCharactersFilterQuery, useGetLocationQuery, useGetFullLocationQuery, useGetLocationCharacterQuery } = rickAndMortyApi

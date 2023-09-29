@@ -37,7 +37,6 @@ export interface CharactersLocation {
 
 
 // location query
-
 export interface RootLocation {
 	info: Info
 	results: Location[]
