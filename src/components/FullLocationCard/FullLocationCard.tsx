@@ -11,7 +11,7 @@ interface FullLocationCardProps {
 export const FullLocationCard: React.FC<FullLocationCardProps> = ({ data }) => {
 
 	const { data: Characters, isError, isSuccess, isLoading } = useGetRickAndMortyQuery()
-	const dataCharLoc = Characters?.results.filter(char => char.location.name == data?.name)
+	const dataCharLoc = Characters?.results.filter(char => char.location.url === data?.url || char.origin.url === data?.url)
 	return (
 		<div className="mt-20 mb-20">
 			<h3 className="mb-10 text-3xl">{data?.name}</h3>
